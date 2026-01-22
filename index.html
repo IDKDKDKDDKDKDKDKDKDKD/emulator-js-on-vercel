@@ -2,57 +2,74 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>EmulatorJS – Upload & Play</title>
+  <title>Aetheon’s EJS</title>
+
   <style>
     body {
       margin: 0;
-      background: #111;
-      color: white;
+      background: #000;
+      color: #fff;
       font-family: Arial, sans-serif;
+      overflow: hidden;
+    }
+
+    header {
+      width: 100%;
+      padding: 20px;
+      text-align: center;
+      font-size: 28px;
+      color: #c4c4c4;
+      letter-spacing: 1px;
+      opacity: 0.85;
+      user-select: none;
+    }
+
+    #upload-text {
+      text-align: center;
+      font-size: 16px;
+      color: #888;
+      margin-top: -10px;
+      margin-bottom: 10px;
+      user-select: none;
+    }
+
+    #emulator-container {
+      width: 100%;
+      height: calc(100vh - 120px);
       display: flex;
-      flex-direction: column;
+      justify-content: center;
       align-items: center;
     }
 
     #emulator {
-      width: 100%;
-      max-width: 900px;
-      height: 600px;
-      background: black;
-      margin-top: 20px;
-    }
-
-    h1 {
-      margin-top: 20px;
-      font-size: 24px;
-      text-align: center;
-    }
-
-    p {
-      opacity: 0.8;
-      text-align: center;
+      width: 90%;
+      height: 90%;
+      background: #000;
+      border: 2px solid #2a2a2a;
+      box-shadow: 0 0 20px #111;
     }
   </style>
 </head>
+
 <body>
 
-  <h1>Upload a ROM to Play</h1>
-  <p>Supports NES, SNES, GB, GBC, GBA, N64, PS1, Sega, and more.</p>
+  <header>Aetheon’s EJS</header>
 
-  <div id="emulator"></div>
+  <div id="upload-text">Upload a ROM to start.</div>
 
-  <script src="emulatorjs/loader.js"></script>
+  <div id="emulator-container">
+    <div id="emulator"></div>
+  </div>
+
+  <script src="emulator/loader.js"></script>
   <script>
-    EJS_player = "#emulator";       // Where emulator appears
-    EJS_core = "auto";              // Auto-detect console
-    EJS_gameUrl = null;             // No default ROM
-    EJS_pathtodata = "emulatorjs/data/";
-
-    // Enable ROM upload button
-    EJS_Buttons = {
-      loadROM: true
-    };
+    EJS_player = "#emulator";
+    EJS_core = "auto";
+    EJS_gameUrl = null;
+    EJS_pathtodata = "emulator/data/";
+    EJS_Buttons = { loadROM: true };
   </script>
 
 </body>
 </html>
+
